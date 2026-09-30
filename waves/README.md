@@ -8,7 +8,7 @@ Served at `/waves/` in the deployed site. No build step, framework, or dependenc
 
 | Path | What it is |
 |---|---|
-| `index.html` | Page shell: header, sidebar, and an empty `#topics` that the script fills in. |
+| `index.html` | Page shell: header, sidebar, an empty `#gallery`, and an empty `#topics` that the script fills in. |
 | `assets/workbench.css` | All styles. Light and dark theme tokens are at the top. |
 | `assets/workbench.js` | Renders `tools.json` into sections and cards. Also handles embeds, fallbacks, theme, and nav. |
 | `tools.json` | **The content**: topics and tools. This is the file you edit. |

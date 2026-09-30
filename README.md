@@ -19,6 +19,10 @@ intuition-deck/
 │   ├── assets/  tools.json  tools.js  scripts/
 │   ├── sims/…          original sims (placeholders for now)
 │   └── README.md       how the workbench works
+├── thermo/             ── Thermodynamics Workbench
+│   ├── index.html
+│   ├── assets/  tools.json  tools.js  scripts/
+│   └── README.md
 └── <next-deck>/        future decks drop in as sibling folders
 ```
 
@@ -28,6 +32,7 @@ Deployed, that maps to:
 |---|---|
 | `/` | the landing page |
 | `/waves/` | the Wave Physics Workbench |
+| `/thermo/` | the Thermodynamics Workbench |
 | `/<next-deck>/` | future decks |
 
 ## Why a monorepo (not branches)
