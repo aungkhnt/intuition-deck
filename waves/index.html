@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wave Physics Workbench</title>
+  <meta name="description" content="Wave-physics simulations from PhET, Falstad, MIT Mathlets and others, grouped by topic, with notes on how to use each one. Part of intuition-deck.">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    // Apply a saved theme before first paint so the page never flashes the wrong one.
+    try {
+      var saved = localStorage.getItem('wb-theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 12C4.5 3 9.5 3 12 12s7.5 9 10 0' fill='none' stroke='%232563eb' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="assets/workbench.css">
+  <script src="assets/workbench.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <button class="icon-btn menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open topics menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <a class="brand" href="#top">
+      <svg class="brand__mark" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12C4.5 3 9.5 3 12 12s7.5 9 10 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Wave Physics Workbench</span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">☾</button>
+      <a class="icon-btn" href="https://github.com/aungkhnt/intuition-deck" target="_blank" rel="noopener noreferrer" aria-label="intuition-deck on GitHub">
+        <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+        <span class="gh-label">GitHub</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Workbench">
+      <div class="sidebar__inner">
+        <nav aria-labelledby="toc-label">
+          <p class="sidebar__label" id="toc-label">Topics</p>
+          <ol class="toc" id="toc"></ol>
+        </nav>
+
+        <p class="sidebar__label">Legend</p>
+        <ul class="legend">
+          <li><span aria-hidden="true">🌐</span> External tool</li>
+          <li><span aria-hidden="true">⚡</span> Recommended first</li>
+          <li><span aria-hidden="true">📐</span> My original sim</li>
+        </ul>
+
+        <p class="sidebar__label">Embeds</p>
+        <label class="setting">
+          <input type="checkbox" id="autoload">
+          <span>Auto-load sims as they scroll into view<small>Each sim is a full app, so this gets heavy fast.</small></span>
+        </label>
+
+        <details class="about">
+          <summary>About this workbench</summary>
+          <p>This workbench embeds and links to educational simulations from PhET, Falstad, oPhysics, MIT Mathlets, Walter Fendt, The Physics Aviary, Dan Russell (PSU), and others. All rights to embedded content belong to their respective authors. See each tool's card for source attribution and license.</p>
+          <p>The workbench code is MIT licensed and lives in <a href="https://github.com/aungkhnt/intuition-deck" target="_blank" rel="noopener noreferrer">intuition-deck</a>.</p>
+        </details>
+      </div>
+    </aside>
+
+    <main class="main" id="main" tabindex="-1">
+      <div class="main__inner">
+        <section class="intro" aria-labelledby="page-title">
+          <p class="intro__kicker">intuition-deck</p>
+          <h1 class="sr-only" id="page-title">Wave Physics Workbench</h1>
+          <p class="lede">A working desk for building intuition about waves: the best free simulations on the web, sorted by topic, each with notes on how to actually use it. Start with the ⚡ cards. The last section is where my own sims will live, built to check the math from first principles rather than just show it.</p>
+        </section>
+
+        <div id="topics"></div>
+
+        <noscript>
+          <div class="notice"><p>This page builds its sections from <a href="tools.json">tools.json</a> with JavaScript. Turn JavaScript on to see the simulations.</p></div>
+        </noscript>
+
+        <footer class="site-footer">
+          <p>Simulations belong to their authors; each card names its source and license. Workbench code is MIT licensed. <a href="https://github.com/aungkhnt/intuition-deck" target="_blank" rel="noopener noreferrer">intuition-deck on GitHub</a></p>
+          <p id="file-mode-note" hidden>Opened from disk, so this page is reading <code>tools.js</code>. After editing <code>tools.json</code>, run <code>node scripts/sync-data.mjs</code> and reload.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
