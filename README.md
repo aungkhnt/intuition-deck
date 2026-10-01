@@ -23,6 +23,12 @@ intuition-deck/
 │   ├── index.html
 │   ├── assets/  tools.json  tools.js  scripts/
 │   └── README.md
+├── rotation/           ── Rotation & Orbits Workbench
+│   ├── index.html
+│   ├── assets/  tools.json  tools.js  scripts/
+│   └── README.md
+├── docs/               ── cross-deck notes and build plans
+│   └── rotation-core-sims-plan.md
 └── <next-deck>/        future decks drop in as sibling folders
 ```
 
@@ -33,6 +39,7 @@ Deployed, that maps to:
 | `/` | the landing page |
 | `/waves/` | the Wave Physics Workbench |
 | `/thermo/` | the Thermodynamics Workbench |
+| `/rotation/` | the Rotation & Orbits Workbench |
 | `/<next-deck>/` | future decks |
 
 ## Why a monorepo (not branches)

@@ -1,0 +1,269 @@
+// GENERATED from tools.json by scripts/sync-data.mjs. Do not edit by hand.
+// index.html loads this only when opened from disk (file://), where fetch() is blocked.
+window.WORKBENCH_DATA = {
+  "topics": [
+    {
+      "id": 1,
+      "slug": "rotational-kinematics",
+      "title": "Rotational Kinematics",
+      "summary": "Angular position, velocity and acceleration of a rigid body. Every point shares one ω and one α, but linear speed and centripetal acceleration grow with distance from the axis.",
+      "equation": "ω = dθ/dt  ·  α = dω/dt  ·  v = ωr  ·  a_{c} = ω^{2}r = v^{2}/r"
+    },
+    {
+      "id": 2,
+      "slug": "torque-inertia",
+      "title": "Torque & Moment of Inertia",
+      "summary": "Torque is the rotational push; moment of inertia is rotational mass. The same force gives a different angular acceleration depending on where it acts and how the mass is spread out.",
+      "equation": "τ = rF sin φ  ·  τ_{net} = Iα  ·  I = Σ m_{i} r_{i}^{2}"
+    },
+    {
+      "id": 3,
+      "slug": "rolling",
+      "title": "Rolling Motion",
+      "summary": "Rolling without slipping ties rotation to translation: v = Rω. A fraction β = I/mR² of the energy hides in spin, so the ranking down an incline depends only on shape, not mass or size.",
+      "equation": "v = Rω  ·  a = g sinθ / (1 + β)  ·  β = I/mR^{2}"
+    },
+    {
+      "id": 4,
+      "slug": "angular-momentum",
+      "title": "Angular Momentum",
+      "summary": "With no external torque, L = Iω is conserved. Pull mass inward and ω rises to compensate — but rotational kinetic energy need not be conserved, because changing I can take work.",
+      "equation": "L = Iω  ·  τ_{ext} = 0 ⇒ L = const  ·  K_{rot} = ½Iω^{2}"
+    },
+    {
+      "id": 5,
+      "slug": "orbits",
+      "title": "Orbits & Gravitation",
+      "summary": "Gravity supplies the centripetal force that bends a trajectory into a closed orbit. Kepler's three laws fall straight out of an inverse-square force: ellipses, equal areas in equal times, and T² ∝ a³.",
+      "equation": "F = GMm/r^{2}  ·  T^{2} = (4π^{2}/GM) a^{3}  ·  dA/dt = const"
+    }
+  ],
+  "tools": [
+    {
+      "id": "phet-ladybug-revolution",
+      "name": "PhET: Ladybug Revolution",
+      "source": "PhET Interactive Simulations, CU Boulder",
+      "url": "https://phet.colorado.edu/en/simulations/rotation",
+      "embed_url": "https://phet.colorado.edu/en/simulations/rotation",
+      "can_embed": false,
+      "embed_note": "Link only: legacy Java sim — it runs in-browser via CheerpJ on PhET's own page, which doesn't embed.",
+      "license": "CC BY 4.0",
+      "topics": [
+        1
+      ],
+      "my_note": "Put two ladybugs at different radii on the turntable and spin it. They share one ω and sweep the same angle in the same time, yet the outer bug's linear speed v = ωr and centripetal acceleration a_c = ω²r are larger — the single idea behind all rigid-body rotation. Turn on the acceleration vector and watch a_c always point inward, toward the axis.",
+      "controls": "Place ladybugs on the rotating platform · set ω (constant angular velocity or acceleration) · show velocity and acceleration vectors · graphs of angle, angular velocity and acceleration · reveal / hide the platform"
+    },
+    {
+      "id": "phet-torque",
+      "name": "PhET: Torque",
+      "source": "PhET Interactive Simulations, CU Boulder",
+      "url": "https://phet.colorado.edu/en/simulations/torque",
+      "embed_url": "https://phet.colorado.edu/en/simulations/torque",
+      "can_embed": false,
+      "embed_note": "Link only: legacy Java sim — it runs in-browser via CheerpJ on PhET's own page, which doesn't embed.",
+      "license": "CC BY 4.0",
+      "topics": [
+        2,
+        4
+      ],
+      "my_note": "The core torque and angular-momentum sim. On the Torque tab, apply a force at the rim and read τ, I and α together — double the radius at the same force and α doubles. On the Angular Momentum tab, drop a bug onto the spinning platform: L is conserved, so ω falls as I jumps, and this is the sim to check a skater/turntable build against. It's legacy Java, so it opens on PhET's page (via CheerpJ) rather than embedding here.",
+      "controls": "Tabs: Torque / Moment of Inertia / Angular Momentum / Bug Magnitudes · applied force and radius · platform moment of inertia · place bugs on the platform · live graphs of τ, ω, α, L · play / pause, slow motion",
+      "recommended_first": true
+    },
+    {
+      "id": "ophysics-inertia-torque",
+      "name": "oPhysics: Rotational Inertia & Torque",
+      "source": "oPhysics",
+      "url": "https://ophysics.com/r4.html",
+      "embed_url": "https://ophysics.com/r4.html",
+      "can_embed": false,
+      "embed_note": "Link only: non-commercial license.",
+      "license": "Non-commercial",
+      "topics": [
+        2
+      ],
+      "my_note": "Apply a torque to a rigid body and watch α respond through τ = Iα. Hold the force fixed and move the mass outward: I grows, so the same torque now produces less angular acceleration. It isolates the shape factor — where the mass sits matters more than how much of it there is.",
+      "controls": "Applied force and lever arm (torque) · mass distribution / moment of inertia · readouts of τ, I and α · play / pause / reset"
+    },
+    {
+      "id": "ophysics-inertia-lab",
+      "name": "oPhysics: Rotational Inertia Lab",
+      "source": "oPhysics",
+      "url": "https://ophysics.com/r5.html",
+      "embed_url": "https://ophysics.com/r5.html",
+      "can_embed": false,
+      "embed_note": "Link only: non-commercial license.",
+      "license": "Non-commercial",
+      "topics": [
+        2
+      ],
+      "my_note": "A falling mass on a string wound around a rotating disk — the classic lab for measuring I. The hanging mass doesn't fall at g, because the string tension is what supplies the torque that spins the disk up; write the coupled equations and the disk's I sets the acceleration. Raise I and watch the fall slow.",
+      "controls": "Hanging mass, disk radius and moment of inertia · release the mass · readouts of linear and angular acceleration and string tension · play / pause / reset"
+    },
+    {
+      "id": "aviary-pulley-inertia",
+      "name": "The Physics Aviary: Moment of Inertia of a Pulley",
+      "source": "The Physics Aviary",
+      "url": "https://thephysicsaviary.com/Physics/Programs/Labs/UnwindingCableLab/",
+      "embed_url": "https://thephysicsaviary.com/Physics/Programs/Labs/UnwindingCableLab/",
+      "can_embed": false,
+      "embed_note": "Link only: the site is behind a Cloudflare bot check, which shows up as a blank frame when embedded.",
+      "license": "No license stated",
+      "topics": [
+        2
+      ],
+      "my_note": "A massive pulley with a cable and a falling mass — randomized each run, so it's a real measure-and-compute lab, not a demo. Time the fall, get the linear acceleration, then back out the pulley's moment of inertia from the torque balance. Good for seeing that a 'massless pulley' assumption actually changes the answer.",
+      "controls": "Begin (randomized setup) · release the falling mass · on-screen measurements (distance, time) · work out acceleration, tension and the pulley's moment of inertia"
+    },
+    {
+      "id": "ophysics-rolling-basics",
+      "name": "oPhysics: Rolling Basics & the Cycloid",
+      "source": "oPhysics",
+      "url": "https://ophysics.com/r1a.html",
+      "embed_url": "https://ophysics.com/r1a.html",
+      "can_embed": false,
+      "embed_note": "Link only: non-commercial license.",
+      "license": "Non-commercial",
+      "topics": [
+        3
+      ],
+      "my_note": "The decomposition that makes rolling click: a point on the rim is the center-of-mass velocity plus the rotation velocity. Watch a rim point trace a cycloid — it momentarily stops dead at the bottom (the contact point) and moves at 2v at the top. Toggle the velocity arrows at several rim points to see the whole wheel as pure rotation about the contact point.",
+      "controls": "Rolling wheel with a traced rim point (cycloid) · velocity vectors at the rim (CM + rotational parts) · speed control · play / pause / reset"
+    },
+    {
+      "id": "ophysics-rolling-friction",
+      "name": "oPhysics: Rotation, Sliding, Rolling & Friction",
+      "source": "oPhysics",
+      "url": "https://ophysics.com/r1.html",
+      "embed_url": "https://ophysics.com/r1.html",
+      "can_embed": false,
+      "embed_note": "Link only: non-commercial license.",
+      "license": "Non-commercial",
+      "topics": [
+        3
+      ],
+      "my_note": "Start a ball spinning in place or sliding without spin and let friction act. Kinetic friction torques it until the no-slip condition v = Rω is reached, after which it rolls freely with no more slipping. Watch the v and Rω curves approach each other and lock — this is the sim to validate a slip-to-roll build against.",
+      "controls": "Initial linear and angular velocity · surface friction coefficient · plots of v and Rω through the slipping→rolling transition · play / pause / reset"
+    },
+    {
+      "id": "ophysics-rolling-race",
+      "name": "oPhysics: Rolling Motion (Incline Race)",
+      "source": "oPhysics",
+      "url": "https://ophysics.com/r2.html",
+      "embed_url": "https://ophysics.com/r2.html",
+      "can_embed": false,
+      "embed_note": "Link only: non-commercial license.",
+      "license": "Non-commercial",
+      "topics": [
+        3
+      ],
+      "my_note": "Race shapes down an incline and the ranking never depends on mass or radius, only on β = I/mR². Set a hoop (β = 1) against a solid sphere (β = 2/5) and the sphere always wins, because less of gravity's work is diverted into spin. Predict the order before releasing, then check it against a = g sinθ/(1 + β).",
+      "controls": "Choose rolling shapes (hoop, disk/cylinder, sphere, shell) · incline angle · release and time the race · energy readouts · play / pause / reset"
+    },
+    {
+      "id": "ophysics-incline-rolling-sliding",
+      "name": "oPhysics: Rolling vs. Sliding Down an Incline",
+      "source": "oPhysics",
+      "url": "https://ophysics.com/r3.html",
+      "embed_url": "https://ophysics.com/r3.html",
+      "can_embed": false,
+      "embed_note": "Link only: non-commercial license.",
+      "license": "Non-commercial",
+      "topics": [
+        3
+      ],
+      "my_note": "A frictionless sliding block raced against rolling shapes on the same incline. The block has nowhere to store energy as spin, so it beats every roller — the clean β → 0 limit. Use it to turn 'rolling is slower' into the sharper 'rolling spends some of the energy on rotation,' then compare the rollers among themselves by β.",
+      "controls": "Sliding block and/or rolling shapes · incline angle · release and compare arrival times · energy breakdown (translational vs rotational) · play / pause / reset"
+    },
+    {
+      "id": "ophysics-angular-momentum",
+      "name": "oPhysics: Angular Momentum Collection",
+      "source": "oPhysics",
+      "url": "https://ophysics.com/r.html",
+      "embed_url": "https://ophysics.com/r.html",
+      "can_embed": false,
+      "embed_note": "Link only: non-commercial license.",
+      "license": "Non-commercial",
+      "topics": [
+        4
+      ],
+      "my_note": "A set of L-conservation demos: the spinning skater pulling their arms in, rotational collisions, and a bullet embedding in a free rod. In each, zero external torque means Iω in equals Iω out — but check the kinetic energy and the collisions and bullet-rod lose it (inelastic), while the skater pulling in gains it (they did work). Use these to validate a skater/turntable build.",
+      "controls": "Several demos (skater, rotational collisions, bullet-into-rod) · adjustable masses, radii and speeds · angular-momentum and kinetic-energy readouts · play / pause / reset"
+    },
+    {
+      "id": "phet-keplers-laws",
+      "name": "PhET: Kepler's Laws",
+      "source": "PhET Interactive Simulations, CU Boulder",
+      "url": "https://phet.colorado.edu/sims/html/keplers-laws/latest/keplers-laws_en.html",
+      "embed_url": "https://phet.colorado.edu/sims/html/keplers-laws/latest/keplers-laws_en.html",
+      "can_embed": true,
+      "license": "CC BY 4.0",
+      "topics": [
+        5
+      ],
+      "my_note": "The cleanest view of all three laws. On First Law, drag the planet's velocity vector and watch the ellipse change shape, with both foci marked — the Sun sits at one, nothing at the other. Switch to Second Law and turn on the area sweeps: the wedges are equal in area even though the planet races at perihelion and crawls at aphelion. On Third Law, change the semi-major axis and read T²/a³ holding constant.",
+      "controls": "Tabs: First Law / Second Law / Third Law · drag the planet's position and velocity vector · eccentricity and semi-major-axis controls · area-sweep count and period timer · show foci, axes, grid · play / pause / step, speed",
+      "recommended_first": true
+    },
+    {
+      "id": "phet-gravity-and-orbits",
+      "name": "PhET: Gravity and Orbits",
+      "source": "PhET Interactive Simulations, CU Boulder",
+      "url": "https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_en.html",
+      "embed_url": "https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_en.html",
+      "can_embed": true,
+      "license": "CC BY 4.0",
+      "topics": [
+        5
+      ],
+      "my_note": "The sim that makes gravity-as-centripetal-force concrete. Turn on the velocity and gravity-force vectors and watch the force point always at the Sun while the velocity stays tangent — an orbit is a perpetual sideways fall. Then hit 'Gravity off' mid-orbit and the planet flies off in a straight line (Newton's first law), the single best demonstration that an orbit is continuous turning, not coasting.",
+      "controls": "Modes: cartoon / to scale · systems: Sun–planet, Sun–planet–moon, planet–moon, planet–satellite · Gravity on/off · show velocity and gravity-force vectors, path, grid, tape measure · mass sliders · play / pause / step, speed",
+      "recommended_first": true
+    },
+    {
+      "id": "phet-my-solar-system",
+      "name": "PhET: My Solar System",
+      "source": "PhET Interactive Simulations, CU Boulder",
+      "url": "https://phet.colorado.edu/sims/html/my-solar-system/latest/my-solar-system_en.html",
+      "embed_url": "https://phet.colorado.edu/sims/html/my-solar-system/latest/my-solar-system_en.html",
+      "can_embed": true,
+      "license": "CC BY 4.0",
+      "topics": [
+        5
+      ],
+      "my_note": "An open n-body sandbox: set each body's mass, position and velocity and let gravity do the rest. Start from a preset (binary star, four-body) before freehand setups, because stable orbits are surprisingly hard to hand-tune — which is itself the lesson. Turn on Path and the center-of-mass marker to see several bodies orbit their shared barycenter, not any one object.",
+      "controls": "Presets (sun & planet, binary star, four bodies, …) · per-body mass, position and velocity · number of bodies · show path, velocity/gravity vectors, grid, center of mass · play / pause / step, speed · reset"
+    },
+    {
+      "id": "gravity-simulator",
+      "name": "Gravity Simulator",
+      "source": "gravitysimulator.org",
+      "url": "https://gravitysimulator.org",
+      "embed_url": "https://gravitysimulator.org",
+      "can_embed": true,
+      "license": "GPL-3.0",
+      "topics": [
+        5
+      ],
+      "my_note": "A 3-D n-body simulator running on real ephemerides — the actual solar system, not a toy. Load the Sun–Earth–Moon or a planet's moons and rotate the view to see that orbits are nearly, but not exactly, coplanar. Switch to a rotating reference frame to freeze the five Lagrange points in place, and watch a gas giant and its moons wobble around their common barycenter.",
+      "controls": "3-D n-body with real ephemerides · scenarios (solar system, Lagrange points, custom) · add bodies, set mass / position / velocity · reference frame (inertial / rotating / body-centered) · time step and speed · camera orbit and zoom",
+      "todo": "Confirm gravitysimulator.org allows iframe embedding in a real browser; if it refuses framing, set can_embed to false."
+    },
+    {
+      "id": "hohmann-transfer",
+      "name": "Hohmann Transfer Simulator",
+      "source": "The Average Scientist",
+      "url": "https://theaveragescientist.co.uk/hohmann-transfer-simulator/",
+      "embed_url": "https://theaveragescientist.co.uk/hohmann-transfer-simulator/",
+      "can_embed": false,
+      "embed_note": "Link only.",
+      "license": "See site",
+      "topics": [
+        5
+      ],
+      "my_note": "The cheapest two-burn hop between circular orbits, made tangible. Set the inner and outer radii and watch the transfer ellipse that just kisses both, with the two Δv burns and the total budget shown. The catch is timing: the destination has to be at the right phase angle when you leave, or you arrive where the planet isn't.",
+      "controls": "Inner and outer orbit radii · launch and watch the transfer ellipse · Δv for each burn and the total · phase angle / timing for the rendezvous · play / pause / reset"
+    }
+  ]
+};
